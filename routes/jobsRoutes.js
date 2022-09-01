@@ -7,6 +7,7 @@ import {
   updateJob
 } from '../controllers/jobsController.js'
 
+router.route("/").post(createJob);
 
 // remember about :id
 router.route('/:id').delete(deleteJob).patch(updateJob)
