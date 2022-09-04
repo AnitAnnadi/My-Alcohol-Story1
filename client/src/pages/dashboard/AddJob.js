@@ -8,13 +8,8 @@ const AddJob = () => {
     isEditing,
     showAlert,
     displayAlert,
-    position,
-    company,
-    jobLocation,
-    jobType,
-    jobTypeOptions,
-    status,
-    statusOptions,
+    title,
+    body,
     handleChange,
     clearValues,
     createJob,
@@ -24,7 +19,7 @@ const AddJob = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    if (!position || !company || !jobLocation) {
+    if (!title || !body ) {
       displayAlert()
       return
     }
@@ -43,53 +38,53 @@ const AddJob = () => {
   return (
     <Wrapper>
       <form className='form'>
-        <h3>{isEditing ? 'edit job' : 'add job'}</h3>
+        <h3>{isEditing ? 'edit story' : 'add story'}</h3>
         {showAlert && <Alert />}
         <div className='form-center'>
-          {/* position */}
+          {/* title */}
           <FormRow
             type='text'
-            name='position'
-            value={position}
+            name='title'
+            value={title}
             handleChange={handleJobInput}
           />
-          {/* company */}
+          {/* body */}
           <FormRow
             type='text'
-            name='company'
-            value={company}
+            name='body'
+            value={body}
             handleChange={handleJobInput}
           />
           {/* location */}
-          <FormRow
+          {/* <FormRow
             type='text'
             labelText='job location'
             name='jobLocation'
             value={jobLocation}
             handleChange={handleJobInput}
-          />
+          /> */}
           {/* job status */}
-          <FormRowSelect
+          {/* <FormRowSelect
             name='status'
             value={status}
             handleChange={handleJobInput}
             list={statusOptions}
-          />
+          /> */}
           {/* job type */}
-          <FormRowSelect
+          {/* <FormRowSelect
             name='jobType'
             labelText='job type'
             value={jobType}
             handleChange={handleJobInput}
             list={jobTypeOptions}
-          />
+          /> */}
           {/* btn container */}
           <div className='btn-container'>
             <button
               type='submit'
               className='btn btn-block submit-btn'
               onClick={handleSubmit}
-              disabled={isLoading}
+              // disabled={isLoading}
             >
               submit
             </button>

@@ -9,9 +9,9 @@ import checkPermissions from '../utils/checkPermissions.js'
 import mongoose from 'mongoose'
 import moment from 'moment'
 const createJob = async (req, res) => {
-  const { position, company } = req.body
-
-  if (!position || !company) {
+  const { title, body } = req.body
+  console.log(req.body)
+  if (!title || !body) {
     throw new BadRequestError('Please provide all values')
   }
   req.body.createdBy = req.user.userId
@@ -20,10 +20,10 @@ const createJob = async (req, res) => {
 }
 const updateJob = async (req, res) => {
   const { id: jobId } = req.params
-  const { company, position } = req.body
+  const { title, body } = req.body
 
-  if (!position || !company) {
-    throw new BadRequestError('Please provide all values')
+  if (!title || !body) {
+    throw new BadRequestError('Please provide all valuesss')
   }
   const job = await Job.findOne({ _id: jobId })
 

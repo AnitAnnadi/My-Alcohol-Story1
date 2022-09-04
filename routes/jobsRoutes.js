@@ -4,11 +4,12 @@ const router = express.Router()
 import {
   createJob,
   deleteJob,
-  updateJob
+  updateJob,
 } from '../controllers/jobsController.js'
 
-
+router.route('/').post(createJob)
 // remember about :id
+// router.route('/stats').get(showStats)
 router.route('/:id').delete(deleteJob).patch(updateJob)
 
 export default router

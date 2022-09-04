@@ -2780,8 +2780,8 @@ export default auth
 
 ```js
 const updateUser = async (req, res) => {
-  const { email, name, lastName, location } = req.body
-  if (!email || !name || !lastName || !location) {
+  const { email, name, lastName } = req.body
+  if (!email || !name || !lastName) {
     throw new BadRequestError('Please provide all values')
   }
 

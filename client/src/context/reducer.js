@@ -56,8 +56,6 @@ const reducer = (state, action) => {
       isLoading: true,
       token: action.payload.token,
       user: action.payload.user,
-      userLocation: action.payload.location,
-      jobLocation: action.payload.location,
       showAlert: true,
       alertType: 'success',
       alertText: action.payload.alertText,
@@ -83,8 +81,6 @@ const reducer = (state, action) => {
       ...initialState,
       user: null,
       token: null,
-      jobLocation: '',
-      userLocation: '',
     }
   }
   if (action.type === UPDATE_USER_BEGIN) {
@@ -96,8 +92,6 @@ const reducer = (state, action) => {
       isLoading: false,
       token: action.payload.token,
       user: action.payload.user,
-      userLocation: action.payload.location,
-      jobLocation: action.payload.location,
       showAlert: true,
       alertType: 'success',
       alertText: 'User Profile Updated!',
@@ -123,11 +117,8 @@ const reducer = (state, action) => {
     const initialState = {
       isEditing: false,
       editJobId: '',
-      position: '',
-      company: '',
-      jobLocation: state.userLocation,
-      jobType: 'full-time',
-      status: 'pending',
+      title: '',
+      body: ''
     }
 
     return {
@@ -171,16 +162,13 @@ const reducer = (state, action) => {
   }
   if (action.type === SET_EDIT_JOB) {
     const job = state.jobs.find((job) => job._id === action.payload.id)
-    const { _id, position, company, jobLocation, jobType, status } = job
+    const {title, body,_id} = job
     return {
       ...state,
       isEditing: true,
       editJobId: _id,
-      position,
-      company,
-      jobLocation,
-      jobType,
-      status,
+      title,
+      body
     }
   }
   if (action.type === DELETE_JOB_BEGIN) {
