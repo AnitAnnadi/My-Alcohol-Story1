@@ -5,7 +5,7 @@
 }
 
 /* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@400;700&display=swap");
 
 html {
   font-size: 100%;
@@ -13,16 +13,27 @@ html {
 
 :root {
   /* colors */
-  --primary-50: #e0fcff;
-  --primary-100: #bef8fd;
-  --primary-200: #87eaf2;
-  --primary-300: #54d1db;
-  --primary-400: #38bec9;
-  --primary-500: #2cb1bc;
-  --primary-600: #14919b;
-  --primary-700: #0e7c86;
-  --primary-800: #0a6c74;
-  --primary-900: #044e54;
+  /* --primary-50: #92d2bf;
+  --primary-100: #7cc8b2;
+  --primary-200: #66bfa5;
+  --primary-300: #50b699;
+  --primary-400: #3aad8c;
+  --primary-500: #24a47f;
+  --primary-600: #209472;
+  --primary-700: #1d8366;
+  --primary-800: #197359;
+  --primary-900: #16624c; */
+
+  --primary-50: #92d2bf;
+  --primary-100: #7cc8b2;
+  --primary-200: #66bfa5;
+  --primary-300: #50b699;
+  --primary-400: #3aad8c;
+  --primary-500: #24a47f;
+  --primary-600: #209472;
+  --primary-700: #1d8366;
+  --primary-800: #197359;
+  --primary-900: #16624c;
 
   /* grey */
   --grey-50: #f0f4f8;
@@ -44,8 +55,8 @@ html {
   --green-dark: #0f5132;
 
   /* fonts  */
-  --headingFont: 'Roboto Condensed', Sans-Serif;
-  --bodyFont: 'Cabin', Sans-Serif;
+  --headingFont: "Roboto Condensed", Sans-Serif;
+  --bodyFont: "Cabin", Sans-Serif;
   --small-text: 0.875rem;
   --extra-small-text: 0.7em;
   /* rest of the vars */
@@ -319,3 +330,4 @@ ul {
     margin-right: 0.5rem;
   }
 }
+
